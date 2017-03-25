@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>calculator</title>
+</head>
+<style type="text/css">
+	td{
+		border:2px solid black;
+		width: 50px;
+		height: 50px;
+		text-align: center;
+		font-weight: 900;
+	}
+	<br>
+	.screen
+	{
+		width:170px;
+		height:75px;
+		border:2px solid black;
+		text-align: left;
+		background-color: grey;
+	}
+	.screen input
+	{
+		width:170px;
+		height:75px;
+		border:2px solid black;
+		text-align: left;
+		background-color: cyan;
+
+	}
+	.digit
+	{
+		background-color: grey;
+		width: 50px;
+		height: 50px;
+	}
+	.equal
+	{
+		width:170px;
+		height:60px;
+		border:2px solid black;
+		text-align: center;
+		background-color: cyan;
+
+
+	}
+	<br>
+
+</style>
+<body>
+<div class="screen" ><input type="text" id="d"></div>
+<table>
+	<tr>
+		<td><input type="button" class="digit" value="1" OnClick='add("1")'></td>
+		<td><input type="button" class="digit" value="2" OnClick='add("2")'></td>
+		<td><input type="button" class="digit" value="3" OnClick='add("3")'></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="digit" value="4" OnClick='add("4")'></td>
+		<td><input type="button" class="digit" value="5" OnClick='add("5")'></td>
+		<td><input type="button" class="digit" value="6" OnClick='add("6")'></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="digit" value="7" OnClick='add("7")'></td>
+		<td><input type="button" class="digit" value="8" OnClick='add("8")'></td>
+		<td><input type="button" class="digit" value="9" OnClick='add("9")'></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="digit" value="+" OnClick='add("+")'></td>
+		<td><input type="button" class="digit" value="0" OnClick='add("0")'></td>
+		<td><input type="button" class="digit" value="-" OnClick='add("-")'></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="digit" value="*" OnClick='add("*")'></td>
+		<td><input type="button" class="digit" value="/" OnClick='add("/")'></td>
+		<td><input type="button" class="digit" value="%" OnClick='add("%")'></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="digit" value="=" OnClick='calc()'></td>
+	</tr>
+</table>
+	
+
+<script type="text/javascript">
+		function clr(val)
+		{
+			
+			document.getElementById("d").value=val;
+		}
+		function add(val)
+		{
+			
+			document.getElementById("d").value+=val;
+		}
+		function calc()
+		{	
+			try
+			{
+			clr(eval(document.getElementById("d").value))
+		}
+		catch(e)
+		{
+			clr('error')
+			
+		}
+		}
+		 
+	</script>	
+</body>
+</html>
